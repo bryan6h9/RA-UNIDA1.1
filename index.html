@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Inicio - Sistema de Reservas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('images/inicio.jpg'); /* Ruta de tu imagen de fondo */
+            background-size: cover; /* Ajusta la imagen al tamaño de la ventana */
+            background-position: center; /* Centra la imagen */
+            background-repeat: no-repeat; /* Evita que la imagen se repita */
+            color: #333;
+        }
+        header {
+            background-color: rgba(0, 188, 212, 0.8); /* Color turquesa moderno con transparencia */
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 20px;
+            display: block;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        nav ul li a:hover {
+            background-color: #00bcd4; /* Efecto hover turquesa */
+        }
+        section {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con transparencia */
+            border-radius: 8px; /* Esquinas redondeadas */
+        }
+        section p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bienvenido al Sistema de Reservas de Vuelos</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="login.html">Iniciar Sesión</a></li>
+            <li><a href="register.html">Registrarse</a></li>
+            <li><a href="reservations.html">Ver Reservaciones</a></li>
+            <li><a href="search.html">Buscar Vuelos</a></li>
+        </ul>
+    </nav>
+    <section>
+        <p>Este es el sistema de reservas de vuelos. Aquí puedes iniciar sesión, registrarte, ver tus reservaciones o buscar vuelos disponibles.</p>
+    </section>
+    <footer>
+        <p>&copy; 2024 Sistema de Reservas de Vuelos. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

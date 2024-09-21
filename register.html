@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario - Sistema de Reservas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('images/registro.jpg'); /* Ruta de tu imagen de fondo */
+            background-size: cover; /* Ajusta la imagen al tamaño de la ventana */
+            background-position: center; /* Centra la imagen */
+            background-repeat: no-repeat; /* Evita que la imagen se repita */
+            color: #333;
+        }
+        header {
+            background-color: rgba(0, 188, 212, 0.8); /* Color turquesa moderno con transparencia */
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 20px;
+            display: block;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        nav ul li a:hover {
+            background-color: #00bcd4;
+        }
+        section {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco con transparencia */
+            border-radius: 8px; /* Esquinas redondeadas */
+            max-width: 500px; /* Ancho máximo del formulario */
+            margin: auto; /* Centrar la sección */
+        }
+        section form {
+            background-color: transparent; /* Sin fondo para el formulario */
+            padding: 20px;
+            box-shadow: none; /* Sin sombra */
+        }
+        section input[type="text"],
+        section input[type="password"],
+        section input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        section input[type="submit"] {
+            background-color: #00bcd4;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        section input[type="submit"]:hover {
+            background-color: #008c9e;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Registro de Usuario</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="login.html">Iniciar Sesión</a></li>
+            <li><a href="reservations.html">Ver Reservaciones</a></li>
+            <li><a href="search.html">Buscar Vuelos</a></li>
+        </ul>
+    </nav>
+    <section>
+        <h2>Crea una cuenta nueva</h2>
+        <form id="registerForm">
+            <label for="username">Nombre de usuario:</label>
+            <input type="text" id="username" name="username" required><br><br>
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" required><br><br>
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required><br><br>
+            <input type="submit" value="Registrar">
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2024 Sistema de Reservas de Vuelos</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
+
