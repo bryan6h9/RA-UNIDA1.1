@@ -102,15 +102,20 @@
     </nav>
     <section>
         <h2>Crea una cuenta nueva</h2>
-        <form id="registerForm">
-            <label for="username">Nombre de usuario:</label>
-            <input type="text" id="username" name="username" required><br><br>
-            <label for="password">Contraseña:</label>
-            <input type="password" id="password" name="password" required><br><br>
-            <label for="email">Correo electrónico:</label>
-            <input type="email" id="email" name="email" required><br><br>
-            <input type="submit" value="Registrar">
-        </form>
+        <form id="registerForm" action="auth.php" method="post">
+    <label for="username">Nombre de usuario:</label>
+    <input type="text" id="username" name="username" required><br><br>
+
+    <label for="password">Contraseña:</label>
+    <input type="password" id="password" name="password" required><br><br>
+
+    <label for="email">Correo electrónico:</label>
+    <input type="email" id="email" name="email" required><br><br>
+
+    <input type="hidden" name="action" value="register"> <!-- Acción de registro -->
+    <input type="submit" value="Registrar">
+</form>
+
     </section>
     <footer>
         <p>&copy; 2024 Sistema de Reservas de Vuelos</p>
