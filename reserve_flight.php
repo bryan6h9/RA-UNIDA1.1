@@ -15,12 +15,17 @@ if ($conn->connect_error) {
 // Reservar vuelo
 $user_id = $_POST['user_id'];
 $flight_id = $_POST['flight_id'];
-$sql = "INSERT INTO Reservations (user_id, flight_id) VALUES ('$user_id', '$flight_id')";
-if ($conn->query($sql) === TRUE) {
+
+// Preparar la consulta
+$stmt = $conn->prepare("INSERT INTO Reservations (user_id, flight_id) VALUES (?, ?)");
+$stmt->bind_param("ii", $user_id, $flight_id); // Asumiendo que user_id y flight_id son enteros
+
+// Ejecutar la consulta
+if ($stmt->execute()) {
     echo "Reservation successful";
 } else {
-    echo "Error: " . $conn->error;
+    echo "Error: " . $stmt->error;
 }
 
-$conn->close();
-?>
+// Cerrar la declaración
+$stmt->close();
