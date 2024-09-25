@@ -13,33 +13,35 @@ if ($conn->connect_error) {
 }
 
 // Registro de usuario
-if ($_POST['action'] == 'register') {
-    $user = $_POST['username'];
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['action']) && $_POST['action'] == 'register') {
+    $user = $conn->real_escape_string($_POST['username']);
     $pass = password_hash($_POST['password'], PASSWORD_BCRYPT);
-    $email = $_POST['email'];
+    $email = $conn->real_escape_string($_POST['email']);
+
     $sql = "INSERT INTO Users (username, password, email) VALUES ('$user', '$pass', '$email')";
     if ($conn->query($sql) === TRUE) {
-        echo "Registration successful";
+        echo "Registro exitoso";
     } else {
         echo "Error: " . $conn->error;
     }
 }
 
 // Inicio de sesión
-if ($_POST['action'] == 'login') {
-    $user = $_POST['username'];
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['action']) && $_POST['action'] == 'login') {
+    $user = $conn->real_escape_string($_POST['username']);
     $pass = $_POST['password'];
+    
     $sql = "SELECT password FROM Users WHERE username='$user'";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
         if (password_verify($pass, $row['password'])) {
-            echo "Login successful";
+            echo "Inicio de sesión exitoso";
         } else {
-            echo "Invalid credentials";
+            echo "Credenciales inválidas";
         }
     } else {
-        echo "No such user";
+        echo "No existe el usuario";
     }
 }
 
