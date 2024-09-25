@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "30438913";
 $dbname = "flight_reservation";
 
 // Crear conexión
